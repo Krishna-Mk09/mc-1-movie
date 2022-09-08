@@ -31,16 +31,14 @@ public class MovieService {
         movieRate.put(movie4, 2);
         movieRate.put(movie5, 3);
         //Key will be movie object and value will be rating ranging from 1 to 5
-
         //return the HashMap object
-        Map map = new HashMap();
-
-        return map;
+        Map<Movie, Integer> map = new HashMap<Movie, Integer>();
+        return movieRate;
     }
 
     public Set<String> getMovieNameWithRating4(Map<Movie, Integer> map, int rating) {
         //Create a TreeSet object
-
+        TreeSet<String> name = new TreeSet<String>();
         //Use entrySet() method to iterate through the map object
 
         //retrieve all the movies name having rating as 4
@@ -54,7 +52,7 @@ public class MovieService {
 
     public List<String> getMovieWithHighestRating(Map<Movie, Integer> map) {
         //Create a ArrayList object of type String
-
+        ArrayList<String> list = new ArrayList<String>();
 
         //get the first value from the map and store it in the variable max
 
