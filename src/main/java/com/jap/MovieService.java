@@ -5,8 +5,13 @@ import java.util.*;
 public class MovieService {
 
     public Map<Movie,Integer> getMovieWithRating(){
-
         //create five movie object by calling Movie class parameterized constructor
+        Movie movie1 = new Movie(101, "A Beautiful Mind", "economic", "11/1/2001");
+        Movie movie2 = new Movie(102, "Boiler Room", "Crime", "1/1/2000");
+        Movie movie3 = new Movie(103, "Buy and Cell", "comedy", "13/4/1988");
+        Movie movie4 = new Movie(104, "Corsair", "Crime", "11/11/1997");
+        Movie movie5 = new Movie(105, "Diamond Necklace", "comedy", "10/11/2021");
+
 
         //create HashMap object and add all the Movie object inside it
 
