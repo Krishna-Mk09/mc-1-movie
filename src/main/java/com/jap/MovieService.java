@@ -4,17 +4,32 @@ import java.util.*;
 
 public class MovieService {
 
-    public Map<Movie,Integer> getMovieWithRating(){
+    public static void main(String[] args) {
+        MovieService movieService = new MovieService();
+        Map<Movie, Integer> map = movieService.getMovieWithRating();
+        Set set = movieService.getMovieNameWithRating4(map, 4);
+        System.out.println("Rating 4" + set);
+        Map map1 = movieService.getAllMoviesWithComedy(map);
+        System.out.println("Comedy Movie " + map1);
+        List list = movieService.getMovieWithHighestRating(map);
+        System.out.println("--------------");
+        System.out.println("Highest Rating " + list);
+    }
+
+    public Map<Movie, Integer> getMovieWithRating() {
         //create five movie object by calling Movie class parameterized constructor
         Movie movie1 = new Movie(101, "A Beautiful Mind", "economic", "11/1/2001");
         Movie movie2 = new Movie(102, "Boiler Room", "Crime", "1/1/2000");
         Movie movie3 = new Movie(103, "Buy and Cell", "comedy", "13/4/1988");
         Movie movie4 = new Movie(104, "Corsair", "Crime", "11/11/1997");
         Movie movie5 = new Movie(105, "Diamond Necklace", "comedy", "10/11/2021");
-
-
         //create HashMap object and add all the Movie object inside it
-
+        Map<Movie, Integer> movieRate = new HashMap<Movie, Integer>();
+        movieRate.put(movie1, 1);
+        movieRate.put(movie2, 4);
+        movieRate.put(movie3, 5);
+        movieRate.put(movie4, 2);
+        movieRate.put(movie5, 3);
         //Key will be movie object and value will be rating ranging from 1 to 5
 
         //return the HashMap object
@@ -23,7 +38,7 @@ public class MovieService {
         return map;
     }
 
-    public Set<String> getMovieNameWithRating4(Map<Movie,Integer> map,int rating){
+    public Set<String> getMovieNameWithRating4(Map<Movie, Integer> map, int rating) {
         //Create a TreeSet object
 
         //Use entrySet() method to iterate through the map object
@@ -34,10 +49,10 @@ public class MovieService {
 
         //return the TreeSet object
 
-      return null;
+        return null;
     }
 
-    public List<String> getMovieWithHighestRating(Map<Movie,Integer> map){
+    public List<String> getMovieWithHighestRating(Map<Movie, Integer> map) {
         //Create a ArrayList object of type String
 
 
@@ -53,7 +68,8 @@ public class MovieService {
         List l = new ArrayList();
         return l;
     }
-    public Map<String,String> getAllMoviesWithComedy(Map<Movie,Integer> map){
+
+    public Map<String, String> getAllMoviesWithComedy(Map<Movie, Integer> map) {
         //Create a Map object
 
         //use entrySet to iterate through the Map object
@@ -65,17 +81,5 @@ public class MovieService {
         Map map1 = new HashMap();
         return map1;
 
-    }
-
-    public static void main(String[] args) {
-        MovieService movieService = new MovieService();
-        Map <Movie,Integer> map = movieService.getMovieWithRating();
-        Set set = movieService.getMovieNameWithRating4(map,4);
-        System.out.println("Rating 4" + set);
-        Map map1 = movieService.getAllMoviesWithComedy(map);
-        System.out.println("Comedy Movie " + map1);
-        List list = movieService.getMovieWithHighestRating((Map<Movie, Integer>) map);
-        System.out.println("--------------");
-        System.out.println("Highest Rating " +list);
     }
 }
